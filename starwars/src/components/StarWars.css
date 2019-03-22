@@ -1,20 +1,73 @@
 .characterList {
     width: 80%;
-    background-color: red;
+    /* background-color: red; */
     margin: auto;
+    height: 100%;
 }
 
 .character {
     display: flex;
-    background-color: green;
-    width: 70%;
+    /* background-color: green; */
+    width: 85%;
     justify-content: space-around;
     margin: auto;
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
 }
 
-p {
+.characterTrait {
     width: 20%;
     margin-left: 5px;
     margin-right: 5px;
-    background-color: white;
+    /* background-color: white; */
+    font-weight: bold;
+    color: white;
+    text-align: left;
+}
+
+.serialNumber {
+    width: 15%;
+    text-align: center;
+}
+
+.columnHeaderContainer {
+    display: flex;
+    /* justify-content: space-around; */
+    margin: auto;
+    width: 68%;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 1.1rem;
+}
+
+.sNo {
+    width: 60px;
+    margin-left: 32px;
+    text-decoration: underline;
+}
+
+.name {
+    width: 50px;
+    margin-left: 35px;
+    text-decoration: underline;
+}
+
+.height {
+    margin-left: 50px;
+    text-decoration: underline;
+}
+
+.gender {
+    margin-left: 20px;
+    text-decoration: underline;
+}
+
+.mass {
+    margin-left: 5px;
+    text-decoration: underline;
+}
+
+.color {
+    margin-left: 35px;
+    width: 120px;
+    text-decoration: underline;
 }
