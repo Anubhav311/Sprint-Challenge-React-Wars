@@ -4,11 +4,14 @@ import './App.css';
 import CharacterList from './components/CharacterList';
 import ColumnHeaders from './components/ColumnHeaders';
 
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      starwarsChars: []
+      starwarsChars: [],
+      currentPage: 1,
+      charsPerPage: 3
     };
   }
 
@@ -32,15 +35,47 @@ class App extends Component {
       });
   };
 
+  handleClick = (event) => {
+    this.setState({
+      currentPage: Number(event.target.id)
+    });
+    console.log(this.state.currentPage);
+  }
+
   render() {
+    const { starwarsChars, currentPage, charsPerPage } = this.state;
+
+    //Logic for current charecters
+    const indexOfLastChar = currentPage * charsPerPage;
+    const indexOfFirstChar = indexOfLastChar - charsPerPage;
+    const currentChars = starwarsChars.slice(indexOfFirstChar, indexOfLastChar)
+
+    //Logic for page numbers
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(starwarsChars.length/charsPerPage); i++){
+      pageNumbers.push(i);
+    }
+
+    const renderPageNumbers = pageNumbers.map(number => {
+      return (
+        <div 
+          key={number}
+          id={number}
+          onClick={this.handleClick}
+          className="number"
+        >
+          {number}
+        </div>
+      )
+    });
+
+    //Code for rending to the DOM
     return (
       <div className="App">
         <h1 className="Header">Star Wars</h1>
+        <div className="page-numbers">Page no. {renderPageNumbers}</div>
         <ColumnHeaders/>
-        <CharacterList
-          starwarsChars={this.state.starwarsChars}
-        />
-        {console.log(this.state.starwarsChars)}
+        <CharacterList currentChars = {currentChars}/>
       </div>
     );
   }
