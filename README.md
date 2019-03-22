@@ -26,11 +26,29 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+React JS is a JavaScript library for developing user interfaces. React makes it possible to build and maintain heavy user-interfaces without putting heavy load on the browsers. As DOM manipulation is an expensive operation, React uses virtual-DOM for achieving this. 
+
+Virtual DOM stores the state of the browser’s DOM and whenever there are any changes to be made, React compares the old state and the new state and just updates only those things which have changed. This way there’s no need to refresh the whole page each time when there’s a change. Which results in performance enhancement.
+
+
 - [ ] What does it mean to _think_ in react?
+
+“think in react” means to think about breaking-down and building UI with React.js in mind. Keeping in consideration the ideas of components, state, props, and other features that are compatible with React.js. 
+As per official website of React.js, following are the steps for thinking in react:
+1 Break the UI into a component hierarchy
+2 Build a static version in React
+3 Identify the minimal (but complete) representation of UI state
+4 Identify where your state should live
+5 Add inverse data flow
+
 
 - [ ] Describe state.
 
+State is an object containing properties/data of a component which can be created, read, updated and deleted. In React, components can be functional or classical. But you need to go for classical components if you want to use state. State is considered to be the brain of the component. 
+
 - [ ] Describe props.
+
+Props are objects used for passing information between components. Props work with state for achieving this. Props are considered to be the blood of a react application.
 
 ## Project Set Up
 
